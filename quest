@@ -1,0 +1,99 @@
+tasks:
+  miningstoneprogression1:
+    type: "blockbreakcertain"
+    amount: 500                           # amount of blocks to be brkoen
+    block: STONE                          # name of block (can be id or minecraft name)
+    reverse-if-placed: false              # (OPTIONAL) if true, blocks of same type placed will reverse progression (prevents silk-touch exploit)
+    check-coreprotect: false              # (OPTIONAL) if true and CoreProtect is present, the plugin will check its logs for player placed blocks
+    check-coreprotect-time: 3600          # (OPTIONAL) time in seconds for the maximum logging period to check
+    use-similar-blocks: false             # (OPTIONAL) if true, this will ignore orientation of doors, logs etc.
+    worlds:                               # (OPTIONAL) restrict to certain worlds
+  mininggraniteprogression1:
+    type: "blockbreakcertain"
+    amount: 100                           # amount of blocks to be brkoen
+    block: GRANITE                        # name of block (can be id or minecraft name)
+    reverse-if-placed: true               # (OPTIONAL) if true, blocks of same type placed will reverse progression (prevents silk-touch exploit)
+    check-coreprotect: true               # (OPTIONAL) if true and CoreProtect is present, the plugin will check its logs for player placed blocks
+    check-coreprotect-time: 3600          # (OPTIONAL) time in seconds for the maximum logging period to check
+    use-similar-blocks: false             # (OPTIONAL) if true, this will ignore orientation of doors, logs etc.
+    worlds:                               # (OPTIONAL) restrict to certain worlds
+  miningandesiteprogression1:
+    type: "blockbreakcertain"
+    amount: 100                           # amount of blocks to be brkoen
+    block: ANDESITE                       # name of block (can be id or minecraft name)
+    reverse-if-placed: true               # (OPTIONAL) if true, blocks of same type placed will reverse progression (prevents silk-touch exploit)
+    check-coreprotect: true               # (OPTIONAL) if true and CoreProtect is present, the plugin will check its logs for player placed blocks
+    check-coreprotect-time: 3600          # (OPTIONAL) time in seconds for the maximum logging period to check
+    use-similar-blocks: false             # (OPTIONAL) if true, this will ignore orientation of doors, logs etc.
+    worlds:                               # (OPTIONAL) restrict to certain worlds
+  miningdioriteprogression1:
+    type: "blockbreakcertain"
+    amount: 100                           # amount of blocks to be brkoen
+    block: DIORITE                        # name of block (can be id or minecraft name)
+    reverse-if-placed: true               # (OPTIONAL) if true, blocks of same type placed will reverse progression (prevents silk-touch exploit)
+    check-coreprotect: true               # (OPTIONAL) if true and CoreProtect is present, the plugin will check its logs for player placed blocks
+    check-coreprotect-time: 3600          # (OPTIONAL) time in seconds for the maximum logging period to check
+    use-similar-blocks: false             # (OPTIONAL) if true, this will ignore orientation of doors, logs etc.
+    worlds:                               # (OPTIONAL) restrict to certain worlds
+  miningcoalprogression1:
+    type: "blockbreakcertain"
+    amount: 25                            # amount of blocks to be brkoen
+    block: COAL_ORE                       # name of block (can be id or minecraft name)
+    reverse-if-placed: true               # (OPTIONAL) if true, blocks of same type placed will reverse progression (prevents silk-touch exploit)
+    check-coreprotect: true               # (OPTIONAL) if true and CoreProtect is present, the plugin will check its logs for player placed blocks
+    check-coreprotect-time: 3600          # (OPTIONAL) time in seconds for the maximum logging period to check
+    use-similar-blocks: false             # (OPTIONAL) if true, this will ignore orientation of doors, logs etc.
+    worlds:                               # (OPTIONAL) restrict to certain worlds
+  miningironprogression1:
+    type: "blockbreakcertain"
+    amount: 15                            # amount of blocks to be brkoen
+    block: IRON_ORE                       # name of block (can be id or minecraft name)
+    reverse-if-placed: true               # (OPTIONAL) if true, blocks of same type placed will reverse progression (prevents silk-touch exploit)
+    check-coreprotect: true               # (OPTIONAL) if true and CoreProtect is present, the plugin will check its logs for player placed blocks
+    check-coreprotect-time: 3600          # (OPTIONAL) time in seconds for the maximum logging period to check
+    use-similar-blocks: false             # (OPTIONAL) if true, this will ignore orientation of doors, logs etc.
+    worlds:                               # (OPTIONAL) restrict to certain worlds
+display:
+  name: "&cMining Progression I"
+  lore-normal:
+    - "&cThis is the first quest in the Mining Quest Progression Series, this is non repeatable."
+    - ""
+    - "&7This quest requires you to:"
+    - "&7 - Mine &f500 &7Stone."
+    - "&7 - Mine &f100 &7Granite."
+    - "&7 - Mine &f100 &7Andesite."
+    - "&7 - Mine &f100 &7Diorite."
+    - "&7 - Mine &f25 &7Coal Ore."
+    - "&7 - Mine &f15 &7Iron Ore."
+    - ""
+    - "&7Rewards:"
+    - "&7 - &f$2500 &7added to your in-game balance."
+    - "&7 - &f1x Diamond Pickaxe, &dEfficiency I, &dUnbreaking I &7added to your inventory."
+  lore-started:
+    - ""
+    - "&7Your current progress:"
+    - "&7 - &f{miningstoneprogression1:progress}&7/500 Mined."
+    - "&7 - &f{mininggraniteprogression1:progress}&7/100 Mined."
+    - "&7 - &f{miningandesiteprogression1:progress}&7/100 Mined."
+    - "&7 - &f{miningdioriteprogression1:progress}&7/100 Mined."
+    - "&7 - &f{miningcoalprogression1:progress}&7/25 Mined."
+    - "&7 - &f{miningironprogression1:progress}&7/15 Mined."
+  type: "WOODEN_PICKAXE"
+rewards:
+  - "eco give {player} 2500"
+  - "give {player} {DIAMOND_PICKAXE}{{display:{Name:"&b&lStone &lSmasher"}Enchantments:[{id:"DIG_SPEED",lvl:1}{id:"DURABILITY",lvl:1}]}"
+placeholders:
+  description: "&8Mining Blocks."
+  progress: - "&7 - &f{miningstoneprogression1:progress}&7/500 Mined."
+            - "&7 - &f{mininggraniteprogression1:progress}&7/100 Mined."
+            - "&7 - &f{miningandesiteprogression1:progress}&7/100 Mined."
+            - "&7 - &f{miningdioriteprogression1:progress}&7/100 Mined."
+            - "&7 - &f{miningcoalprogression1:progress}&7/25 Mined."
+            - "&7 - &f{miningironprogression1:progress}&7/15 Mined."
+options:
+  category: "mining"
+  repeatable: true
+  cooldown:
+    enabled: false
+    time: 0
+  sort-order: 1
